@@ -12,7 +12,7 @@ type TransactionRepository interface {
 	FindTransactionByUser(ID int) ([]models.Transaction, error)
 	GetTransaction(ID int) (models.Transaction, error)
 	CreateTransaction(transaction models.Transaction) (models.Transaction, error)
-	// UpdateTransaction(transaction models.Transaction, Id int) (models.Transaction, error)
+	UpdateTransaction(status string, orderId int) (models.Transaction, error)
 	// DeleteTransaction(transaction models.Transaction) (models.Transaction, error)
 	// GetCategoryfilm(ID int) (models.Category, error)
 }
@@ -48,21 +48,21 @@ func (r *repository) CreateTransaction(transaction models.Transaction) (models.T
 	return transaction, err
 }
 
-// func (r *repository) UpdateTransaction(status string, orderId int) (models.Transaction, error) {
-// 	var transaction models.Transaction
-// 	r.db.Preload("User").First(&transaction, orderId)
+func (r *repository) UpdateTransaction(status string, orderId int) (models.Transaction, error) {
+	var transaction models.Transaction
+	r.db.Preload("User").First(&transaction, orderId)
 
-// 	if status != transaction.Status && status == "success" {
-// 		var user models.User
-// 		r.db.First(&user, transaction.UserID)
-// 		user.Subcribe = true
-// 		r.db.Save(&user)
-// 	}
+	if status != transaction.Status && status == "success" {
+		var user models.User
+		r.db.First(&user, transaction.UserID)
+		user.Subcribe = true
+		r.db.Save(&user)
+	}
 
-// 	transaction.Status = status
-// 	err := r.db.Save(&transaction).Error
-// 	return transaction, err
-// }
+	transaction.Status = status
+	err := r.db.Save(&transaction).Error
+	return transaction, err
+}
 
 // func (r *repository) UpdateTransaction(transaction models.Transaction, Id int) (models.Transaction, error) {
 // 	err := r.db.Preload("Trip.Country").Model(&transaction).Updates(&transaction).Error
