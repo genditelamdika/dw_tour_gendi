@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "predtor",
+      "image": "bri.jpg",
+      "Trip": "4D/3N Overland Jakarta B..."
+    },
+    {
+      "id": 2,
+      "name": "saya",
+      "image": "bri.jpg",
+      "Trip": "4D/3N Overland Jakarta B..."
+    },
+    {
+      "id": 3,
+      "name": "robot",
+      "image": "bni.jpg",
+      "Trip": "4D/3N Overland Jakarta B..."
+    },
+    {
+      "id": 4,
+      "name": "predator",
+      "image": "danamon.jpg",
+      "Trip": "4D/3N Overland Jakarta B..."
+    },
+    {
+      "id": 5,
+      "name": "Amerika",
+      "image": "bri.jpg",
+      "Trip": "4D/3N Overland Jakarta B..."
+    },
+    {
+      "id": 6,
+      "name": "bangsat",
+      "image": "bca.jpg",
+      "Trip": "4D/3N Overland Jakarta B..."
+    }
+  ]
